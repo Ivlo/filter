@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset= "utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="filter.css">
+</head>
+<body>
+  <form class="m_filter_videos" data-collapsable>
+  <div class="m_filter_videos_header">
+    <strong>filtros de videos</strong>
+    <a href="" data-toggle data-expanded-text="ocultar" class="btn_show">ver</a>
+  </div>
+  <div class="m_filter_videos_content" data-collapsable-content>
+    <fieldset>
+      <legend>momento</legend>
+      <strong class="m_filter_videos_content_title">momento</strong>
+      <div class="m_filter_videos_content_box">
+        <p>
+          <input type="radio" name="moment" id="moment_1">
+          <label for="moment_1">Actualidad</label>
+        </p>
+        <p>
+          <input type="radio" name="moment" id="moment_2">
+          <label for="moment_2">Temporada</label>
+        </p>
+        <p>
+          <input type="radio" name="moment" id="moment_3">
+          <label for="moment_3">Historia</label>
+        </p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>sección</legend>
+      <strong class="m_filter_videos_content_title">sección</strong>
+      <div class="m_filter_videos_content_box">
+        <p>
+          <input type="radio" name="section" id="section_1">
+          <label for="section_1">Futbol</label>
+        </p>
+        <p>
+          <input type="radio" name="section" id="section_2">
+          <label for="section_2">Baloncesto</label>
+        </p>
+        <p>
+          <input type="radio" name="section" id="section_3">
+          <label for="section_3">Club</label>
+        </p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>categoría</legend>
+      <strong class="m_filter_videos_content_title">categoría</strong>
+      <div class="m_filter_videos_content_box">
+        <p>
+          <input type="checkbox" name="category1" id="category1">
+          <label for="category1">Primer Equipo</label>
+        </p>
+        <p>
+          <input type="checkbox" name="category2" id="category2">
+          <label for="category2">Cantera</label>
+        </p>
+      </div>
+      
+    </fieldset>
+
+    <fieldset>
+      <legend>tipo</legend>
+      <strong class="m_filter_videos_content_title">tipo</strong>
+      <div class="m_filter_videos_content_box">
+        <p>
+          <input type="checkbox" name="type1" id="type1">
+          <label for="type1">Partidos</label>
+        </p>
+        <p>
+          <input type="checkbox" name="type2" id="type2">
+          <label for="type2">Goles</label>
+        </p>
+        <p>
+          <input type="checkbox" name="type3" id="type3">
+          <label for="type3">Celebraciones</label>
+        </p>
+        <p>
+          <input type="checkbox" name="type4" id="type4">
+          <label for="type4">Resumenes</label>
+        </p>
+        <p>
+          <input type="checkbox" name="type5" id="type5">
+          <label for="type5">Anecdotas</label>
+        </p>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Trending Topics</legend>
+      <strong class="m_filter_videos_content_title">Trending Topics</strong>
+      <div class="m_filter_videos_content_box">
+        <p><a href="">IKER CASILLAS</a></p>
+        <p><a href="">JOSE MOURHINO</a></p>
+        <p><a href="">RM VS MANCHESTER UNITED</a></p>
+        <p><a href="">DI STEFANO</a></p>
+      </div>
+    </fieldset>
+
+    <div class="m_filter_keywords">
+      <div class="m_filter_keywords_box">
+        <p>
+          <label for="keywords">Palabras claves</label>
+          <input type="text" placeholder="Añadir palabras claves" class="m_filter_keywords_box_input">
+          <a href="" class="m_filter_keywords_box_add">añadir</a>
+        </p>
+        <input type="hidden" name="hidden_words" id="hidden_words" class="m_filter_keywords_hidden">
+      </div>
+      <div class="m_filter_keywords_actions">
+        <a href="" class="m_filter_keywords_actions_delete">Borrar filtros</a>
+        <button type="submit" class="btn">filtrar</button>
+      </div>
+    </div>
+  </div>
+</form>
+<script  src="jquery-1.9.1.min.js" type="text/javascript"></script>
+<script  src="underscore.js" type="text/javascript"></script>
+<script src="filter.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function(){
+    $(".m_filter_videos").filter();
+  })
+</script>
+</body>
+</html>
+
