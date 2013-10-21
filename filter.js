@@ -21,29 +21,40 @@ $.extend(Filter.prototype,{
         type = element.attr('type');
     if(type == "checkbox") {
       if(element.is(":checked")){
-        this.add_check(e.target);
+        this.add_check(element);
+        console.log("dentro")
       }else{
-        console.log("borrame");
         this.remove_check(element);
+        console.log('fuera');
       }
     }
     else if (type == "radio") {
-      console.log("es un radio");
+     this.add_radio(element);
     }
   },
-  add_check:function(target) {
-    var element_add = $(target).closest('p').find('label');
+  add_check:function(element) {
+    var element_add = $(element).closest('p').find('label');
     $(element_add).clone().appendTo(this.content_add);
   },
   remove_check:function(element){
-    var borrar = element.attr('id');
-    console.log(borrar);
-    this.content_add.find('[for='+borrar+']').remove();
+    var element_remove = element.attr('id');
+    this.content_add.find('[for='+element_remove+']').remove();
     
   },
   clear_filter:function(){
     console.log('clear_filter');
+  },
+  add_radio:function(element) {
+    var attr_name = $(element).attr('name'),
+        label_text = $(element).closest('p').find('label').text();
+    this.content_add.find("[for="+attr_name+"]").remove();
+    this.content_add.append("<label for="+attr_name+" data-radio>"+label_text+"</label>");
+   
+  },
+  remove_radio:function(){
+
   }
+
 });
 
 
