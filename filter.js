@@ -1,6 +1,6 @@
 //Creo mi constructor
 function Filter(element,options){
-  _.bindAll(this,"type_element");
+  _.bindAll(this,"type_element","remove_radio");
   this.options = $.extend({}, Filter.DEFAULTS, options);
   this.element = element;
   this.$element = $(element);
@@ -9,12 +9,15 @@ function Filter(element,options){
   this.ivan = [];
   this.init();
   
+  
 }
 
 //extiendo mis funciones en mi prototipo
 $.extend(Filter.prototype,{
   init:function() {
     this._inputs.on('click',this.type_element);
+    this.content_add.on('click','[data-radio]',this.remove_radio);
+    
   },
   type_element:function(e){
     var element = $(e.target),
@@ -51,8 +54,11 @@ $.extend(Filter.prototype,{
     this.content_add.append("<label for="+attr_name+" data-radio>"+label_text+"</label>");
    
   },
-  remove_radio:function(){
-
+  remove_radio:function(e){
+    e.preventDefault();
+    var filter_element = $(e.target).attr('for');
+    $(".m_filter_videos_content_box p").find("[name="+filter_element+"]").prop('checked',false);
+    $(e.target).remove();
   }
 
 });
