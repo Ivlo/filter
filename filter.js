@@ -57,7 +57,8 @@ $.extend(Filter.prototype,{
   remove_radio:function(e){
     e.preventDefault();
     var filter_element = $(e.target).attr('for');
-    $(".m_filter_videos_content_box p").find("[name="+filter_element+"]").prop('checked',false);
+    console.log(this.element);
+    this.$element.find("[name="+filter_element+"]").prop('checked',false);
     $(e.target).remove();
   }
 
